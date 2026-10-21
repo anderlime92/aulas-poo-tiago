@@ -14,6 +14,8 @@ $filme3 = new Filme('Homem Aranha', 'Ação', 2026, 145);
 $serie1 = new Serie("Friends", "Comédia", 1992, 24);
 $serie2 = new Serie("Supernatural", "Suspense", 2005, 20);
 
+$series = [$serie1, $serie2];
+
 // echo "<pre>";
 // var_dump($serie1, $serie2);
 // echo "</pre>";
@@ -56,6 +58,20 @@ $filmes = [$filme1, $filme2, $filme3];
         </div>
 
         <hr>
+
+        <div class="series">
+            <?php foreach($series as $serie): ?>
+                <article class="card-serie">
+                    <span class="genero"> <?= $serie->getGenero() ?> </span>
+                    <h2> <?= $serie->getTitulo() ?> </h2>
+                    <p class="ano">Lançamento: <?= $serie->getAno() ?> </p>
+                    
+                    <?php if($serie->ehClassico()): ?>
+                        <span class="classico">Clássico</span>
+                    <?php endif; ?>
+                </article>
+            <?php endforeach; ?>
+        </div>
 
         <div class="assuntos-estudados">
             <h2>Assuntos estudados</h2>
