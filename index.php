@@ -2,16 +2,20 @@
 // Importando a superclasse/pai: Conteudo
 require_once "src/Conteudo.php";
 
-// Importando a subclasse/filha: Filme (que herda de Conteudo)
+// Importando as subclasses/filhas: Filme e Serie (que herda de Conteudo)
 require_once "src/Filme.php";
+require_once "src/Serie.php";
 
 // Criando os objetos e passando os dados para o construtor
 $filme1 = new Filme('De Volta para o Futuro', 'Ficcão', 1985, 116);
 $filme2 = new Filme('Toy Story', 'Animação', 1995, 105);
 $filme3 = new Filme('Homem Aranha', 'Ação', 2026, 145);
 
+$serie1 = new Serie("Friends", "Comédia", 1992, 24);
+$serie2 = new Serie("Supernatural", "Suspense", 2005, 20);
+
 // echo "<pre>";
-// var_dump($filme1, $filme2, $filme3);
+// var_dump($serie1, $serie2);
 // echo "</pre>";
 
 $filmes = [$filme1, $filme2, $filme3];
