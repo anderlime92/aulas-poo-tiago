@@ -8,7 +8,7 @@ class Serie extends Conteudo
 
     // 1) Adicione uma propriedade específica da Série: temporadas
     // 2) Programe o uso dos construtores considerando superclasse e subclasse
-    // 3) Faça getter/setter para esta propriedade
+    // 3) Faça getter/setter para esta propriedade (temporadas)
     // 4) (na index.php) Crie dois objetos do tipo Serie 
     // 5) (na index.php) Mostre estes dois objetos usando var_dump    
 }
