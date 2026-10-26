@@ -33,7 +33,7 @@ $conteudos = [$filme1, $filme2, $serie1, $serie2];
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minha Coleção de Filmes</title>
+    <title>Minha Coleção de Filmes e Séries</title>
     <link rel="stylesheet" href="css/estilo.css">
 </head>
 
@@ -41,8 +41,8 @@ $conteudos = [$filme1, $filme2, $serie1, $serie2];
     <div class="container">
         <header>
             <p class="destaque">Uma sessão de boas histórias</p>
-            <h1>Minha coleção de filmes</h1>
-            <p>Três filmes para descobrir, rever e se divertir</p>
+            <h1>Minha coleção de filmes e séries</h1>
+            <p>Filmes e séries para descobrir, rever e se divertir</p>
         </header>
 
         <div class="conteudos">
@@ -71,13 +71,11 @@ $conteudos = [$filme1, $filme2, $serie1, $serie2];
         <div class="assuntos-estudados">
             <h2>Assuntos estudados</h2>
             <ul>
-                <li>Classe-pai (superclasse): <b>Conteudo</b></li>
-                <li>Classe-filha (subclasse): <b>Filme</b> e <b>Serie</b></li>
-                <li>Herança utilizando <b>extends</b></li>
-                <li>Herança com propriedades e métodos</li>
-                <li>Visibilidade <b>protected</b> na superclasse permitindo o acesso através das subclasses.</li>
-                <li>Construtor da superclasse através de <b>parent::__construct()</b></li>
-                <li>Propriedades específicas das subclasses</li>
+                <li>Classe abstrata: <b>Conteudo</b></li>
+                <li>Impossibilidade de instanciar diretamente uma classe abstrata</li>
+                <li>Método abstrato: <b>getDescricao()</b></li>
+                <li>Obriga a implementação do método abstrato pelas classes filhas Filme e Serie</li>
+                <li>Polimorfismo: a mesma chamada a <b>getDescricao()</b> utiliza a implementação de cada classe</li>
             </ul>
         </div>
 
