@@ -1,4 +1,4 @@
-<?php 
+<?php
 require_once "src/Notificador.php";
 require_once "src/NotificadorEmail.php";
 require_once "src/NotificadorSMS.php";
@@ -18,6 +18,13 @@ $emailPedido2 = $notificadorPorEmail->enviar("Seu pedido 789xyz foi confirmado")
 $emailPedido3 = $notificadorPorEmail->enviar("Seu pedido 456asd foi confirmado");
 
 $notificadores = [$notificadorPorEmail, $notificadorPorSMS];
+
+/* ***************************** */
+$notificadorPorEmailTeste2 = new NotificadorEmail();
+$notificadorPorEmailTeste3 = new NotificadorEmail();
+
+$notificadorPorEmailTeste2->enviar("pedidos entregues!");
+$notificadorPorEmailTeste3->enviar("Pedidos à espera de avaliação");
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -37,35 +44,50 @@ $notificadores = [$notificadorPorEmail, $notificadorPorSMS];
             <p>Simulação de notificações sobre pedidos por e-mail e SMS</p>
         </header>
 
-        <div class="conteudos">        
+        <div class="conteudos">
             <article class="card-conteudo">
                 <h2>Notificações: Pedido 123abc</h2>
                 <p> <?= $emailPedido1 ?> </p>
                 <p> <?= $smsPedido1 ?> </p>
             </article>
 
-                        <article class="card-conteudo">
+            <article class="card-conteudo">
                 <h2>Notificações: Pedido 789xyz</h2>
                 <p> <?= $emailPedido2 ?> </p>
                 <p> <?= $emailPedido2 ?> </p>
             </article>
 
-                        <article class="card-conteudo">
+            <article class="card-conteudo">
                 <h2>Notificações: Pedido 456asd</h2>
                 <p> <?= $emailPedido3 ?> </p>
                 <p> <?= $emailPedido3 ?> </p>
             </article>
 
+            <hr>
+
+            <section class="card-conteudo">
+                <h2>Resumo/Total dos envios de notificações</h2>
+                <!-- Note como o acesso do método estático ATRAVÉS da classe e com o uso do operador :: (resolução de escopo) -->
+                <p>E-mails enviados: <b> <?= NotificadorEmail::getQuantidadeEnviada() ?> </b></p>
+                <p>SMS enviados: <b> <?= NotificadorSMS::getQuantidadeEnviada() ?> </b></p>
+            </section>
+
+            <hr>
+
         </div>
 
-        <hr>        
+        <hr>
 
-    <div class="assuntos-estudados">
-        <h2>Assuntos estudados</h2>
-        <ul>
-            
-        </ul>
-    </div>
+        <div class="assuntos-estudados">
+            <h2>Assuntos estudados</h2>
+            <ul>
+                <li>Propriedades estáticas usando <b>static</b></li>
+                <li>Métodos estáticos usando <b>static</b></li>
+                <li>Acesso a recursos estáticos com <b>::</b></li>
+                <li>Acesso a recursos estáticos da própria classe usando <b>self</b></li>
+                <li>Diferença entre usar recursos estáticos de classe e recursos de objeto</li>
+            </ul>
+        </div>
 
     </div>
 </body>
