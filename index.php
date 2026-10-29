@@ -6,6 +6,17 @@ require_once "src/NotificadorSMS.php";
 $notificadorPorEmail = new NotificadorEmail();
 $notificadorPorSMS = new NotificadorSMS();
 
+// Pedido 123abc
+$emailPedido1 = $notificadorPorEmail->enviar("Seu pedido 123abc foi confirmado!");
+$smsPedido1 = $notificadorPorSMS->enviar("Seu pedido 123abc foi confirmado");
+
+// Pedido 789xyz
+$emailPedido2 = $notificadorPorEmail->enviar("Seu pedido 789xyz foi confirmado");
+
+// Pedido 456asd
+
+$emailPedido3 = $notificadorPorEmail->enviar("Seu pedido 456asd foi confirmado");
+
 $notificadores = [$notificadorPorEmail, $notificadorPorSMS];
 ?>
 <!DOCTYPE html>
@@ -28,6 +39,21 @@ $notificadores = [$notificadorPorEmail, $notificadorPorSMS];
 
         <div class="conteudos">        
             <article class="card-conteudo">
+                <h2>Notificações: Pedido 123abc</h2>
+                <p> <?= $emailPedido1 ?> </p>
+                <p> <?= $smsPedido1 ?> </p>
+            </article>
+
+                        <article class="card-conteudo">
+                <h2>Notificações: Pedido 789xyz</h2>
+                <p> <?= $emailPedido2 ?> </p>
+                <p> <?= $emailPedido2 ?> </p>
+            </article>
+
+                        <article class="card-conteudo">
+                <h2>Notificações: Pedido 456asd</h2>
+                <p> <?= $emailPedido3 ?> </p>
+                <p> <?= $emailPedido3 ?> </p>
             </article>
 
         </div>
